@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+ import {BrowserRouter,  Route} from "react-router-dom"
+import Bir from "./components/bir";
+import Ikki from "./components/ikki";
+import Uch from "./components/uch";
+import Tort from "./components/tort";
+import Besh from "./components/besh";
+import Salom from "./components/nav";
+import Nol from "./components/nol"
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    
+    
+  <BrowserRouter>
+  <Salom/>
+  
+  <switch>
+  <Route exact path="/" component={Nol}/>
+  <Route path="/bir" component={Bir}/>
+  <Route path="/ikki" component={Ikki}/>
+  <Route path="/uch" component={Uch}/>
+  <Route path="/tort" component={Tort}/>
+  <Route path="/besh" component={Besh}/>
+  </switch>
+  </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
